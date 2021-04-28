@@ -1,0 +1,54 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Flight Paths using Edge Bundling</title>
+
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://unpkg.com/topojson@3"></script>
+  <script src="https://unpkg.com/d3-delaunay@4"></script>
+  <script src="https://unpkg.com/d3-geo-voronoi@1"></script>
+
+  <link href="index.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- must be 960x600 to match topojson us atlas files -->
+<svg width="960" height="600" id="mysvg">
+  <!-- must be in this order for drawing -->
+  <g id="basemap"></g>
+  <text id="tooltip" style="display: none;"></text>
+</svg>
+
+<div>
+  <label for="symptoms">Choose a symptom:</label>
+  <select name="symptoms" id="symptoms" onChange = "changeSymptom()">
+    <option value="none" selected="selected">none</option>
+    <option value="symptom1">symptom1</option>
+    <option value="symptom2">symptom2</option>
+    <option value="symptom3">symptom3</option>
+    <option value="symptom4">symptom4</option>
+    <option value="symptom5">symptom5</option>
+  </select>
+</div>
+
+<div id="totalDistribution">
+  <p>Total Distribution:</p>
+  <div id = 'total_pie'></div>
+</div>
+
+<div id="sexDistribution">
+  <p>Sex Distribution:</p>
+  <div id = 'sex_pie'></div>
+</div>
+
+<div id="ageDistribution">
+  <p>Age Distribution:</p>
+  <div id = 'age_hist'></div>
+</div>
+
+<script src="index.js"></script>
+
+</body>
+</html>
